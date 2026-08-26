@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>icargo - Login</title>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #f4f6f8;
+        }
+
+        /* Container designed to fit 100% of any monitor screen */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 460px;
+            width: 100vw;
+            height: 100vh;
+            min-height: 100vh;
+        }
+
+        /* Left Hero Section - Expands to fill monitor height & width */
+        .left-section {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #0f4c5c;
+            overflow: hidden;
+        }
+
+        .hero-text {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-text img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* Right Form Section - Auto vertical & horizontal center */
+        .right-section {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.08);
+            overflow-y: auto;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto 0; /* Ensures vertical centering regardless of display height */
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .logo .i-red {
+            color: #e53e3e;
+        }
+
+        .logo .cargo-blue {
+            color: #0f4c5c;
+        }
+
+        .login-title {
+            font-size: 1.5rem;
+            color: #0f4c5c;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #4a5568;
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #0f4c5c;
+            box-shadow: 0 0 0 3px rgba(15, 76, 92, 0.12);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 11px 0;
+            border-radius: 5px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #008080;
+            color: white;
+            border: 1px solid #008080;
+        }
+
+        .btn-primary:hover {
+            background-color: #006666;
+            border-color: #006666;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #008080;
+            border: 1px solid #008080;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f7fafc;
+        }
+
+        .footer-brand {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .footer-brand span.brand-name {
+            color: #0f4c5c;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .footer-brand span.brand-sub {
+            color: #e53e3e;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .copyright {
+            font-size: 0.725rem;
+            color: #a0aec0;
+            text-align: center;
+        }
+
+        /* --- Display Responsive Queries --- */
+
+        /* Ultrawide / Large Displays (1600px+) */
+        @media (min-width: 1600px) {
+            .container {
+                grid-template-columns: 1fr 520px;
+            }
+
+            .login-box {
+                max-width: 380px;
+            }
+        }
+
+        /* Laptops / Smaller Desktop Monitors (1024px to 1280px) */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr 400px;
+            }
+        }
+
+        /* Tablets & Mobile Landscape (<= 850px) */
+        @media (max-width: 850px) {
+            html, body {
+                height: auto;
+                overflow-y: auto;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .left-section {
+                height: 220px;
+            }
+
+            .right-section {
+                height: auto;
+                min-height: calc(100vh - 220px);
+                padding: 40px 20px;
+                box-shadow: none;
+            }
+        }
+
+        /* Mobile Portrait Screens (<= 480px) */
+        @media (max-width: 480px) {
+            .left-section {
+                height: 160px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .right-section {
+                padding: 30px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Hero Section -->
+        <div class="left-section">
+            <div class="hero-text">
+                <img src="/HTML/files/loginimage.jpg" alt="Login Banner">
+            </div> 
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="right-section">
+            <div class="login-box">
+                <!-- Logo -->
+                <div class="logo">
+                    <span class="i-red">i</span><span class="cargo-blue">JM</span>
+                </div>
+                
+                <div class="login-title">Login</div>
+
+                <!-- Form -->
+                <form action="#" method="POST" style="width: 100%;">
+                    <div class="form-group">
+                        <label for="userId">Username</label>
+                        <input type="text" id="userId" name="userId" autocomplete="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" autocomplete="current-password" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="reset" class="btn btn-secondary">Clear</button>
+                    </div>
+                </form>
+
+                <!-- Footer Branding -->
+                <div class="footer-brand">
+                    Powered by <span class="brand-name">iJM</span><span class="brand-sub">software</span>
+                </div>
+
+                <!-- Copyright -->
+                <div class="copyright">
+                    Copyright © 2026 JM Software. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

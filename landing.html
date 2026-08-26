@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HUNGRY FLIX</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans antialiased min-h-screen">
+
+  <!-- Navigation Bar -->
+  <nav class="w-full bg-black border-b border-gray-800 relative">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="text-xl font-extrabold tracking-wider text-white hover:text-red-600 transition">
+        JM FLIX
+      </a>
+
+      <!-- Desktop Menu Items (Visible on medium screens and above) -->
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="#" class="hover:text-red-500 transition">Home</a>
+        <a href="#" class="hover:text-red-500 transition">Movies</a>
+        <a href="#" class="hover:text-red-500 transition">Series</a>
+        <a href="#" class="hover:text-red-500 transition">Login</a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button (Visible only on small screens) -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2 rounded" aria-label="Toggle Menu">
+          <!-- Hamburger Icon -->
+          <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-zinc-950 border-t border-gray-800 px-6 py-4 space-y-3 text-sm font-medium">
+      <a href="#" class="block hover:text-red-500 transition py-1">Home</a>
+      <a href="#" class="block hover:text-red-500 transition py-1">Movies</a>
+      <a href="#" class="block hover:text-red-500 transition py-1">Series</a>
+      <a href="#" class="block hover:text-red-500 transition py-1">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center text-center py-24 px-4 bg-black">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-3">
+      Stream the Best Movies
+    </h1>
+    <p class="text-gray-400 text-sm md:text-base mb-8">
+      Watch your favorites anytime, anywhere
+    </p>
+    <button class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2.5 rounded text-sm transition duration-200">
+      Start Watching
+    </button>
+  </section>
+
+  <!-- Featured Movies Section -->
+  <section class="bg-white text-black py-10 px-6 min-h-screen">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-zinc-900">Featured Movies</h2>
+      
+      <!-- Grid Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <!-- Movie Card 1 -->
+        <div class="overflow-hidden rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+          <img src="https://m.media-amazon.com/images/M/MV3BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTcyNTM@._V1_.jpg" alt="Featured Movie" class="w-full h-80 object-cover" />
+        </div>
+
+        <!-- Movie Card 2 -->
+        <div class="overflow-hidden rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+          <img src="https://m.media-amazon.com/images/M/MV3BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTcyNTM@._V1_.jpg" alt="Featured Movie" class="w-full h-80 object-cover" />
+        </div>
+
+        <!-- Movie Card 3 -->
+        <div class="overflow-hidden rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+          <img src="https://m.media-amazon.com/images/M/MV3BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTcyNTM@._V1_.jpg" alt="Featured Movie" class="w-full h-80 object-cover" />
+        </div>
+
+        <!-- Movie Card 4 -->
+        <div class="overflow-hidden rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+          <img src="https://m.media-amazon.com/images/M/MV3BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTcyNTM@._V1_.jpg" alt="Featured Movie" class="w-full h-80 object-cover" />
+        </div>
+
+        <!-- Movie Card 5 -->
+        <div class="overflow-hidden rounded-lg shadow-md hover:scale-105 transition duration-300 cursor-pointer">
+          <img src="https://m.media-amazon.com/images/M/MV3BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTcyNTM@._V1_.jpg" alt="Featured Movie" class="w-full h-80 object-cover" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

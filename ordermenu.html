@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McSavers - Sulit-Busog Meals</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Top Banner Header */
+    .header-banner-img {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      display: block;
+    }
+
+    .header-banner-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Menu Items Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    /* Card Item */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #27251f;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .card-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #27251f;
+      margin-bottom: 16px;
+    }
+
+    .btn-order {
+      background-color: #ffbc0d; /* McDonald's Yellow */
+      color: #27251f;
+      border: none;
+      padding: 10px 16px;
+      font-weight: 700;
+      border-radius: 20px;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-order:hover {
+      background-color: #e5a700;
+    }
+
+    /* Badge Style */
+    .badge {
+      display: inline-block;
+      background-color: #db0007;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      width: fit-content;
+
+        /* --- Display Responsive Queries --- */
+
+        /* Ultrawide / Large Displays (1600px+) */
+        @media (min-width: 1600px) {
+            .container {
+                grid-template-columns: 1fr 520px;
+            }
+        }
+
+        /* Laptops / Smaller Desktop Monitors (1024px to 1280px) */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr 400px;
+            }
+        }
+
+        /* Tablets & Mobile Landscape (<= 850px) */
+        @media (max-width: 850px) {
+            html, body {
+                height: auto;
+                overflow-y: auto;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            }
+        }
+
+        /* Mobile Portrait Screens (<= 480px) */
+        @media (max-width: 480px) {
+            .left-section {
+                height: 160px;
+            }
+
+            }
+        }
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Banner Image -->
+    <header class="header-banner-img">
+      <!-- Replace banner.jpg with the path to your banner image file -->
+      <img src="/HTML/files/banner.jpg" alt="McSavers Sulit-Busog Meals Banner">
+    </header>
+
+    <!-- Menu Items Grid -->
+    <main class="menu-grid">
+
+      <!-- Item 1 -->
+      <div class="card">
+        <div>
+          <img src="/HTML/files/vm1.jpg">
+          <h2 class="card-title">Mega Meal - 1pc Chicken McDo w/ Crispy Chicken Fillet</h2>
+        </div>
+        <div>
+          <p class="card-price">₱ 227.00</p>
+          <button class="btn-order">Order</button>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="card">
+        <div>
+          <img src="/HTML/files/vm2.jpg">
+          <h2 class="card-title">1pc Chicken McDo with Crispy Chicken Fillet and Drink</h2>
+        </div>
+        <div>
+          <p class="card-price">₱ 178.00</p>
+          <button class="btn-order">Order</button>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="card">
+        <div>
+          <img src="/HTML/files/vm3.jpg">
+          <h2 class="card-title">1pc Chicken McDo with Mushroom Pepper Steak and Drink</h2>
+        </div>
+        <div>
+          <p class="card-price">₱ 178.00</p>
+          <button class="btn-order">Order</button>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="card">
+        <div>
+          <img src="/HTML/files/vm4.jpg">
+          <h2 class="card-title">Golden Curry Fillet with Egg Meal</h2>
+        </div>
+        <div>
+          <p class="card-price">₱ 188.00</p>
+          <button class="btn-order">Order</button>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="card">
+        <div>
+          <h2 class="card-title">Golden Chicken Curry Fillet with Fries Medium Meal</h2>
+        </div>
+        <div>
+         <img src="/HTML/files/vm1.jpg">
+          <p class="card-price">₱ 187.00</p>
+          <button class="btn-order">Order</button>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="card">
+        <div>
+         <img src="/HTML/files/vm2.jpg">
+          <h2 class="card-title">Golden Chicken Curry Fillet with Medium Drink</h2>
+        </div>
+        <div>
+          <p class="card-price">₱ 112.00</p>
+          <button class="btn-order">Order</button>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="card">
+        <div>
+          <span class="badge">Better</span>
+          <h2 class="card-title">2-pc. Chicken McDo Meal</h2>
+        </div>
+        <div>
+         <img src="/HTML/files/vm3.jpg">
+          <p class="card-price">₱ 230.00</p>
+          <button class="btn-order">Order</button>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="card">
+        <div>
+          <h2 class="card-title">1-pc. Chicken McDo with Rice & Coke McFloat</h2>
+        </div>
+        <div>
+         <img src="/HTML/files/vm4.jpg">
+          <p class="card-price">₱ 146.00</p>
+          <button class="btn-order">Order</button>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
