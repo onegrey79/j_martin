@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 5</title>
+  </head>
+  <body>
+    <script type="application/javascript">
+      /* 
+        Loops and Iteration in JavaScript
+        Loops are used to execute a block of code multiple times. There are different types of loops in JavaScript. 
+
+        The most common types of loops in javascript:
+        1. for loop - A for loop runs a block of code a fixed number of times.
+        2. while loop - A while loop runs as long as a condition is true.
+        3. do while loop - A do-while loop executes at least once, even if the condition is false.
+
+        //Initialization 
+          // Condition 
+          // Increment - incrementation ++ - decrementation --  (+1)(-1) 
+        for(let x=1; x<=5;x++)
+        {
+          console.log(x);
+            console.log("Kahit Sino Programmer");
+        }
+
+                let x = 0;   
+        while(x<=5)
+        {
+             console.log(x);
+             x++;
+        }
+
+                 let x = 0;   
+
+         do {
+          console.log(x);
+             x++;
+         }  
+          while(x<=5)
+
+          //exceute atleast one 
+                   let x = 0;   
+
+         do {
+          console.log(x);
+             x++;
+         }  
+          while(x>5)
+               // False 
+
+
+                
+      //  break Statement stops the loop entirely.
+
+      for (let x = 1; x <= 5; x++) {
+        if(x===3)
+      {
+        break;
+      }
+        console.log(x);
+        console.log("Kahit Sino Programmer");
+      }
+
+        */
+
+      // continue skips the current iteration and moves to the next.
+      for (let x = 1; x <= 5; x++) {
+        if (x === 3) {
+          continue;
+        }
+        console.log(x);
+        console.log("Kahit Sino Programmer");
+      }
+    </script>
+  </body>
+</html>

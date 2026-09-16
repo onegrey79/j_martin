@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 4</title>
+  </head>
+  <body>
+    <script type="application/javascript">
+      /*
+        Functions in JavaScript
+        Functions allow you to organize code into reusable blocks. There are different ways to define functions in JavaScript.
+
+
+             Function Declarations vs. Function Expressions
+             A function declaration is defined using the function keyword and can be called before its definition due to hoisting
+      
+                greet();
+                function greet() {
+                    console.log("Hello, Visitor!");
+                }
+
+           Function Expression
+           A function expression is assigned to a variable. It cannot be called before its definition.
+                
+                   const greet = function ()
+            {
+                console.log("Hello, Visitor!");
+            }
+               greet();
+
+             function greet(name,age)
+             {
+                console.log(`Hello, visitor ${name} Age: ${age}`);
+             } 
+                  
+            greet("Allen Young",19);
+            greet("Dingdong",60);
+
+
+                  function add(a,b)
+             {
+                return a + b;
+             }     
+
+            let result = add(10,20);
+            console.log(result);
+
+
+             const subtraction = function (a,b)
+             {
+                return a - b;
+             }
+
+            let difference = subtraction(20,10);
+             console.log(difference);
+
+                  */
+
+            const division = (a,b) =>
+            {
+                return a/b;
+            }
+            let resultDiv = division(20,10);
+            console.log(resultDiv);
+
+            const Multiplication = (a,b) => a * b;
+            let product = Multiplication(30,50);
+            console.log(product);
+
+
+            const square = x => x*x;
+            let squareResult = square(3);
+            console.log(squareResult);
+    </script>
+  </body>
+</html>

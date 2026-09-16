@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 7</title>
+  </head>
+  <body>
+    <script type="application/javascript">
+      /// OBJECT Example
+
+      const person = {
+        firstName: "Allen",
+        lastName: "Young",
+        age: 29,
+        fullName: function () {
+          return this.firstName + this.lastName;
+        },
+      };
+
+      ///Accessing data in object
+
+      //DOT NOTATION
+      //console.log(person.firstName);
+      //console.log(person.lastName);
+      //person.firstName = "Michael";
+      //console.log(person.firstName);
+      //console.log(person.fullName());
+
+      //Bracket notation
+     // console.log(person["firstName"]);
+      //console.log(person["fullName"]());
+
+
+      //JSON 
+
+      const personJSON = JSON.stringify(person);
+      console.log("\nJSON STRING:",personJSON);
+
+      //Bringing back string to Json 
+      const parsedPerson = JSON.parse(personJSON);
+      console.log(parsedPerson);
+    </script>
+  </body>
+</html>

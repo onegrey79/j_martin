@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 8</title>
+
+    <style>
+      .theBodyOne {
+        background-color: #1a0dc9;
+      }
+
+      .theBodyTwo {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body class="theBodyOne">
+    <h1>DOM & Event Listeners: Interactivity Examples</h1>
+    <div id="content">
+      <p id="message">Original Content</p>
+    </div>
+
+    <div name="theTargetName">Target through name</div>
+    <div class="groupOne">Class 1</div>
+    <div class="groupOne">Class 2</div>
+    <div class="groupOne">Class 3</div>
+
+    <input type="text" id="inputField" placeholder="Type something..." />
+    <hr />
+    <button id="myButton">Click Me!</button>
+
+    <br /><br /><br /><br />
+    <div>LOGIN FORM</div>
+    <form id="registrationForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" />
+      <span id="errorMsg" class="error"></span>
+      <br /><br />
+      <button type="submit">Register</button>
+    </form>
+
+    <br /><br /><br /><br />
+    <button id="toggleClassBtn">Toggle Highlight Class on Content</button>
+
+    <script type="application/javascript">
+      // ----------------------------------------------------
+      // 1. Selecting Elements (Lesson 8)
+      // ----------------------------------------------------
+      const messagePara = document.getElementById("message");
+      const contentDiv = document.querySelector("#content");
+      const theNameTarget = document.getElementsByName("theTargetName");
+      const groupOne = document.getElementsByClassName("groupOne");
+      const groupOneQuerySelector = document.querySelectorAll(".groupOne");
+
+      // ----------------------------------------------------
+      // 2. Changing Content using textContent & innerHTML & Value (Lesson 8)
+      // ----------------------------------------------------
+
+      messagePara.textContent = "New Content";
+      messagePara.innerHTML = "<strong style='color:red;'>New Content</strong>";
+
+      // ----------------------------------------------------
+      // 3. Adding & Removing Elements (Lesson 8)
+      // ----------------------------------------------------
+
+      const newElement = document.createElement("p");
+      newElement.textContent = "SECOND ELEMENT ADDED!";
+      newElement.style.color = "blue";
+      contentDiv.appendChild(newElement);
+      contentDiv.removeChild(messagePara);
+
+      // ----------------------------------------------------
+      // 4. Event Listener (Lesson 8)
+      // ----------------------------------------------------
+
+      const theButton = document.getElementById("myButton");
+      theButton.addEventListener("click", function () {
+        const newElement = document.createElement("p");
+        newElement.textContent = "Third Element ELEMENT ADDED!";
+        newElement.style.color = "yellow";
+        contentDiv.appendChild(newElement);
+        contentDiv.removeChild(messagePara);
+      });
+
+      // - 'change': When the value of an element changes (often used with select, checkbox, radio)
+      // - 'submit': When a form is submitted.
+      // - 'drag', 'drop', 'dragover': For drag-and-drop functionality.
+      // - 'touchstart', 'touchend', 'touchmove': For touch events on mobile devices.
+      // - 'mouseenter' and 'mouseleave': Similar to mouseover/mouseout but do not bubble.
+
+      // Form Validation Basics
+      const registrationForm = document.getElementById("registrationForm");
+      const usernameInput = document.getElementById("username");
+      const errorMsg = document.getElementById("errorMsg");
+
+      registrationForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        
+        if (usernameInput.value === "") {
+          errorMsg.textContent = "Please enter a username!";
+          errorMsg.style.color = "red";
+        } else {
+          errorMsg.textContent = "";
+        }
+      });
+
+
+
+
+      let toggleClassBtn = document.getElementById("toggleClassBtn");
+      toggleClassBtn.addEventListener("click", function () {
+           // document.getElementsByTagName("body")[0].classList.toggle("theBodyTwo");
+           document.getElementsByTagName("body")[0].className = "theBodyTwo";
+      });
+      // Dynamic Class
+    </script>
+  </body>
+</html>
